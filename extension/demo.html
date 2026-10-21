@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>顺读 · 中英文字体试读</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="engine.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body class="demo-layout" data-demo><div class="demo-settings">
+  <header><div class="brand"><span class="mark" aria-hidden="true">顺</span><div><h1>顺读<span>READ AT YOUR PACE</span></h1><p>让文字，顺着你的节奏。</p></div></div><label class="switch" title="开启或恢复网页"><input id="enabled" type="checkbox" aria-label="开启阅读处理"><span></span></label></header>
+  <main>
+    <div class="context"><span class="dot"></span><span id="siteName">正在连接当前网页…</span><span id="scopeBadge">本站设置</span></div>
+    <section class="preview-card" aria-label="实时预览"><div class="section-label"><span>阅读预览</span><button id="compare" type="button" aria-pressed="false">对照原文</button></div><div id="preview"><p id="previewZh"></p><p id="previewEn"></p></div><p class="preview-note">从一小段文字，找到舒服的感觉。</p></section>
+    <section class="controls"><div class="section-label"><h2>字的样子</h2><span>中英分别选择</span></div><div class="grid"><label>中文字体<select id="chineseFont"><option value="serif">思源宋体</option><option value="sans">思源黑体</option><option value="original">网页原字体</option></select></label><label>英文字体<select id="englishFont"><option value="follow">跟随中文字体</option><option value="lexend">Lexend</option><option value="original">网页原字体</option></select></label></div></section>
+    <section class="controls"><div class="section-label"><h2>给视线一些落点</h2><span>轻一点，也可以</span></div><div class="grid"><label>中文强调<select id="chineseMode"><option value="word">整词强调</option><option value="prefix">词首加粗</option><option value="off">关闭强调</option></select></label><label>英文强调<select id="englishMode"><option value="prefix">词首加粗</option><option value="off">关闭强调</option></select></label></div><fieldset><legend>强调强度</legend><div class="segments"><label><input type="radio" name="intensity" value="light"><span>轻</span></label><label><input type="radio" name="intensity" value="medium"><span>中</span></label><label><input type="radio" name="intensity" value="strong"><span>重</span></label></div></fieldset></section>
+    <section class="controls spacing"><div class="section-label"><h2>留一点呼吸的空间</h2><button id="reset" type="button">恢复默认</button></div><label class="slider">正文字号<output id="fontSizeValue"></output><input id="fontSize" type="range" min="14" max="28" step="1"></label><label class="slider">行距<output id="lineHeightValue"></output><input id="lineHeight" type="range" min="1.3" max="2.4" step="0.05"></label><label class="slider">字距<output id="letterSpacingValue"></output><input id="letterSpacing" type="range" min="0" max="0.12" step="0.01"></label></section>
+    <footer><label class="scope-label">保存范围<select id="scope"><option value="site">仅此网站</option><option value="global">全局默认</option></select></label><button id="inherit" type="button">本站跟随全局</button><p id="status" role="status" aria-live="polite">设置自动保存 · 字体与文字处理均在本地</p><a href="demo.html" target="_blank" rel="noopener">打开完整试读页 <span aria-hidden="true">↗</span></a></footer>
+  </main>
+</div>
+<div class="demo-article">
+  <p class="eyebrow">SHUNDU / A SMALL READING EXPERIMENT</p>
+  <h2>找到你读着舒服的样子。</h2>
+  <p class="intro">左侧调整，右侧试读。字体和强调可以自由组合。<br>点「对照原文」查看处理前后；也可以粘贴一段你正在读的文字。</p>
+  <article id="article">
+    <h3>从一段中文开始</h3>
+    <p data-source="清晨的城市还没有完全醒来。窗外的树影轻轻晃动，你打开一篇昨天没读完的文章。这一次，不必急着读到结尾，只需要找到一个舒服的位置，从眼前这一句开始。"></p>
+    <p data-source="阅读体验可以自己调整。字体的形状、文字的间距，以及一段话里的视觉落点，都可以慢慢尝试。你可以选择思源宋体的笔画变化，也可以切换到思源黑体，看看哪一种更合心意。"></p>
+    <h3>A gentle place to begin</h3>
+    <p data-source="There is no hurry to reach the end of the page. Take a breath, find your place, and let the next sentence come into focus. Sometimes a different typeface or a little more space is all you want to try."></p>
+    <h3>中英混排，也按你的习惯</h3>
+    <p data-source="今天让中英文使用同一套字体，看看 reading experience 有什么不同。Coffee 放在桌边，Chrome 里的文章慢慢展开。不是每一行都需要同样的节奏，也不必一次找到所有答案。"></p>
+  </article>
+  <label for="customText">换成你自己的文字</label>
+  <textarea id="customText" placeholder="粘贴中文、英文或中英混排的段落…"></textarea>
+  <button id="previewCustom" type="button">试读这段文字 →</button>
+  <p id="customPreview" style="white-space:pre-wrap"></p>
+  <p class="footnote">中文整词强调使用本地分词与间隔规则，不做语义关键词判断。<br>本页仅供试读；安装扩展后，点击工具栏中的「顺读」调整真实网页。</p>
+</div></body>
+</html>

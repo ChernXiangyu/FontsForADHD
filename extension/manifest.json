@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "顺读 · 中英阅读助手",
+  "description": "自己选字体，自己定阅读节奏。支持思源宋体、思源黑体、Lexend，以及可调节的中英文强调。",
+  "version": "0.1.1",
+  "minimum_chrome_version": "120",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "顺读 · 阅读设置" },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["engine.js", "content.js"],
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [{
+    "resources": ["fonts/*"],
+    "matches": ["http://*/*", "https://*/*"]
+  }]
+}

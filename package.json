@@ -1,0 +1,10 @@
+{
+  "name": "shundu-reader",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build-demo.cjs",
+    "test": "node --test tests/engine.test.cjs",
+    "test:browser": "node tests/browser.cjs"
+  }
+}
